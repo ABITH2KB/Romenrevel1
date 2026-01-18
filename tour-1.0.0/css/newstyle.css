@@ -1,0 +1,56 @@
+/* ===============================
+   Wedding Planner Custom Sections
+================================= */
+
+.wp-hero {
+  height: 90vh;
+  background: url('../images/wedding-bg.jpg') center/cover no-repeat;
+  position: relative;
+  color: white;
+}
+
+.wp-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.65);
+}
+
+.wp-hero-content {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  text-align: center;
+}
+
+.wp-blue-title {
+  color: #2f8bff;
+  font-weight: 600;
+}
+
+.wp-section {
+  padding: 80px 0;
+}
+
+.wp-dark-section {
+  background: #000;
+  color: white;
+  padding: 80px 0;
+}
+
+.wp-service-card {
+  background: #f8f9fa;
+  padding: 30px;
+  border-radius: 12px;
+  text-align: center;
+  height: 100%;
+}
+
+.wp-service-card .icon {
+  font-size: 32px;
+  margin-bottom: 15px;
+}
+
+.wp-contact-form {
+  max-width: 500px;
+  margin: auto;
+}
