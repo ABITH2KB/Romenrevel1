@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wedding Planners - Your Dream Wedding Awaits</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="css/jquery.fancybox.min.css">
+    <link rel="stylesheet" href="fonts/icomoon/style.css">
+    <link rel="stylesheet" href="fonts/flaticon/font/flaticon.css">
+    <link rel="stylesheet" href="css/daterangepicker.css">
+    <link rel="stylesheet" href="css/aos.css">
+    <link rel="stylesheet" href="css/wedding.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+  --primary-color: #bfa37a;   /* champagne beige */
+  --secondary-color: #f6f5f3; /* warm ivory background */
+  --dark-color: #181818;      /* rich black */
+  --light-color: #ffffff;
+}
+
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: var(--dark-color);
+        }
+        
+        .hero-section {
+            background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('images/indeximg/Corporate Event Photography — DCEventPhoto-Picsart-AiImageEnhancer.jpeg') center/cover;
+            min-height: 70vh;
+            display: flex;
+            align-items: center;
+            color: white;
+            text-align: center;
+        }
+        
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            color: var(--dark-color);
+        }
+        
+        .service-card {
+            border: none;
+            border-radius: 15px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            height: 100%;
+            background: white;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+        
+        .icon-box {
+            width: 70px;
+            height: 70px;
+           background: var(--primary-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            font-size: 2rem;
+            color: white;
+        }
+        
+        .feature-box {
+            padding: 2rem;
+            background: white;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .btn-primary-custom {
+            background: var(--primary-color);
+            border: none;
+            padding: 12px 35px;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+        
+        .btn-primary-custom:hover {
+            background: var(--secondary-color);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        footer {
+            background: var(--dark-color);
+            color: white;
+            padding: 3rem 0 1rem;
+        }
+        
+        footer a {
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        footer a:hover {
+            color: var(--primary-color);
+        }
+        
+        .stock-ticker {
+            background: #f0f0f0;
+            padding: 0.5rem 0;
+            font-size: 0.9rem;
+        }
+        /* ===== NAVBAR DROPDOWN CARD STYLE ===== */
+        
+        .navbar .dropdown-menu {
+            display: block;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(15px);
+            transition: all 0.25s ease;
+            border-radius: 16px;
+            padding: 14px 0;
+            border: none;
+            min-width: 260px;
+            box-shadow: 0 20px 45px rgba(0, 0, 0, 0.18);
+        }
+        /* Hover open */
+        
+        .navbar .dropdown:hover .dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+        /* Dropdown items */
+        
+        .dropdown-menu .dropdown-item {
+            padding: 5px 15px;
+            font-weight: 500;
+        }
+        
+        .dropdown-menu .dropdown-item:hover {
+            background: #f6f6f6;
+            color: #000;
+            border-radius: 8px;
+        }
+        /* Prevent click opening */
+        
+        .dropdown-toggle::after {
+            display: none;
+        }
+
+
+/* ===== HEADER HEIGHT INCREASE ===== */
+/* .navbar {
+  padding-top: 22px;
+  padding-bottom: 22px;
+} */
+
+.navbar .nav-link {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+body, h1, h2, h3, h4, h5, h6 {
+  font-family: 'Lato', sans-serif;
+}
+
+section {
+  padding-top: 90px;
+  padding-bottom: 90px;
+}
+
+.section-title {
+  letter-spacing: 1px;
+  font-weight: 600;
+}
+
+p {
+  line-height: 1.8;
+  color: #555;
+}
+.hero-section p {
+  color: #ffffff;
+}
+
+
+
+.navbar {
+    background: transparent !important;
+    padding-top: 15px !important;
+    padding-bottom: 15px !important;
+    position: absolute !important;
+    width: 100%;
+    z-index: 999;
+    box-shadow: none !important;
+    border-bottom: none !important;
+}
+
+.navbar-light .navbar-nav .nav-link {
+    color: #ffffff !important;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+    padding: 8px 16px !important;
+    transition: color 0.3s;
+}
+
+.navbar-light .navbar-nav .nav-link:hover {
+    color: #d6d4d2 !important;
+}
+
+.navbar-light .navbar-nav .nav-link.active {
+    color: #faf8f5 !important;
+    font-weight: 700;
+}
+
+.navbar-light .navbar-toggler-icon {
+    filter: invert(1);
+}
+.navbar-brand img, .logo img {
+    filter: drop-shadow(0px 0px 6px rgba(138, 137, 137, 0.9));
+}
+
+
+
+    </style>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <div class="site-mobile-menu site-navbar-target">
+        <div class="site-mobile-menu-header">
+            <div class="site-mobile-menu-close">
+                <span class="icofont-close js-menu-toggle"></span>
+            </div>
+        </div>
+        <div class="site-mobile-menu-body"></div>
+    </div>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+
+            <!-- Logo -->
+             <a href="index.html" class="logo m-0" style="display: flex; align-items: center;">
+  <img src="images/service/removed.png" alt="" style="height: 90px; width: auto;">
+</a>
+
+            <!-- Mobile Toggle -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+            <!-- Menu -->
+            <div class="collapse navbar-collapse" id="mainNavbar">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+
+                    <li class="nav-item">
+                        <a class="nav-link active" href="index.html">Home</a>
+                    </li>
+
+                    <!-- Services Dropdown -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                        Services
+                    </a>
+                        <ul class="dropdown-menu">
+                           
+                            <li><a class="dropdown-item" href="wedding22.html">Wedding Planners</a></li>
+                            <li><a class="dropdown-item" href="tourndtravel.html">Tours and Travels</a></li>
+                            <li><a class="dropdown-item" href="Eventsanddecor.html">Events & Decoration</a></li>
+                            <li><a class="dropdown-item" href="venueandconsultation.html">Venue & Consultation</a></li>
+                            <li><a class="dropdown-item" href="photondvedio.html">Photography & Videography</a></li>
+                            <li><a class="dropdown-item" href="Caravansevice.html">Caravan Services</a></li>
+                             <li><a class="dropdown-item" href="Coorporateevents2.html">Corporate Events</a></li>
+                        </ul>
+                    </li>
+
+                    <!-- Travels Dropdown -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                        Travels
+                    </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="internatinal.html">International Packages</a></li>
+                            <li><a class="dropdown-item" href="Domesticpacakge.html">Domestic Packages</a></li>
+                            <li><a class="dropdown-item" href="Resortbooking.html">Resort Booking</a></li>
+                            <li><a class="dropdown-item" href="Capeignservice.html">Camping Services</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="services.html">Services</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact Us</a>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <h1 class="display-3 fw-bold text-white mb-4">Coorporate Events</h1>
+                    <p class="lead mb-4">From boardroom conferences to grand product launches, we design and execute corporate events that leave a lasting impression  professionally planned, flawlessly delivered.
+</p>
+                    <a href="contact.html" class="btn btn-primary-custom btn-lg"> Plan </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Introduction -->
+   
+
+    <!-- Initial Planning Section -->
+  <section id="planning" class="py-4">
+    <div class="container">
+        <h2 class="section-title text-center mb-5">Planning With Purpose</h2>
+
+        <div class="row">
+
+            <!-- Full-width Centered Text -->
+            <div class="col-12 text-center">
+
+  <h5 class="mb-3">Brand-Aligned Themes</h5>
+<p>Custom event concepts and décor designed to reflect your company's identity, values, and vision.</p>
+
+<h5 class="mb-3">Vendor Coordination</h5>
+<p>We manage AV teams, caterers, speakers, and logistics all coordinated under one roof for zero hassle.</p>
+
+<h5 class="mb-3">Agenda & Flow Management</h5>
+<p>Precise scheduling and on-ground coordination that keeps your event running smoothly from start to finish.</p>
+
+<h5 class="mb-3">Guest Experience</h5>
+<p>From registration to closing remarks, every touchpoint is designed to impress and engage your attendees.</p>
+
+</div>
+
+        </div>
+    </div>
+</section>
+
+    <!-- Wedding Day Logistics -->
+
+
+    <!-- Personalize Section -->
+    <section id="personalize" class="py-5">
+        <div class="container">
+            <h2 class="section-title text-center mb-5">Personalizing Your Wedding Experience</h2>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-3">
+                    <div class="service-card p-4 text-center">
+                        <div class="icon-box">
+                            <i class="fas fa-palette"></i>
+                        </div>
+                       <h5 class="mb-3">Brand-Aligned Themes</h5>
+<p>Custom event concepts and décor designed to reflect your company's identity, values, and vision.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="service-card p-4 text-center">
+                        <div class="icon-box">
+                            <i class="fas fa-handshake"></i>
+                        </div>
+                      <h5 class="mb-3">Vendor Coordination</h5>
+<p>We manage AV teams, caterers, speakers, and logistics all coordinated under one roof for zero hassle.</p>
+
+
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="service-card p-4 text-center">
+                        <div class="icon-box">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                       <h5 class="mb-3">Agenda & Flow Management</h5>
+<p>Precise scheduling and on-ground coordination that keeps your event running smoothly from start to finish.</p>
+
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="service-card p-4 text-center">
+                        <div class="icon-box">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                       <h5 class="mb-3">Guest Experience</h5>
+<p>From registration to closing remarks, every touchpoint is designed to impress and engage your attendees.</p>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="section-title text-center mb-5">Planning Services</h2>
+           
+
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="service-card p-4 text-center">
+                        <div class="icon-box">
+                            <i class="fas fa-ring"></i>
+                        </div>
+                       <h5 class="mb-3">Conferences & Summits</h5>
+<p>End-to-end planning for large-scale conferences, seminars, and industry summits.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="service-card p-4 text-center">
+                        <div class="icon-box">
+                            <i class="fas fa-paint-brush"></i>
+                        </div>
+                       <h5 class="mb-3">Team Events & Offsites</h5>
+<p>Engaging team-building experiences and corporate retreats that motivate and connect your people.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="service-card p-4 text-center">
+                        <div class="icon-box">
+                            <i class="fas fa-champagne-glasses"></i>
+                        </div>
+                       <h5 class="mb-3">Product Launches</h5>
+<p>High-impact launch events crafted to create buzz, engage media, and spotlight your brand.</p>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-5">
+        <div class="container">
+            <h2 class="section-title text-center mb-5">Contact Us</h2>
+            <div class="row">
+                <div class="col-lg-6 mx-auto">
+                    <form class="p-4 shadow rounded bg-white">
+                        <div class="mb-3">
+                            <label class="form-label">Full Name</label>
+                            <input type="text" class="form-control" placeholder="Your name">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Email Address</label>
+                            <input type="email" class="form-control" placeholder="your@email.com">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Wedding Date</label>
+                            <input type="date" class="form-control">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Message</label>
+                            <textarea class="form-control" rows="4" placeholder="Tell us about your dream wedding..."></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary-custom w-100">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stock Ticker (Banca Section) -->
+   
+    <!-- Footer -->
+   
+    
+  <div class="site-footer">
+    <div class="inner first">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6 col-lg-4">
+            <div class="widget">
+              <h3 class="heading">About Us</h3>
+              <p> Crafting elegant weddings, memorable events, and seamless experiences.</p>
+            </div>
+            <div class="widget">
+              <ul class="list-unstyled social">
+                <li><a href="#"><span class="icon-twitter"></span></a></li>
+                <li><a href="#"><span class="icon-instagram"></span></a></li>
+                <li><a href="#"><span class="icon-facebook"></span></a></li>
+                <li><a href="#"><span class="icon-linkedin"></span></a></li>
+                <li><a href="#"><span class="icon-dribbble"></span></a></li>
+                <li><a href="#"><span class="icon-pinterest"></span></a></li>
+                <li><a href="#"><span class="icon-apple"></span></a></li>
+                <li><a href="#"><span class="icon-google"></span></a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-2 pl-lg-5">
+            <div class="widget">
+              <h3 class="heading">Pages</h3>
+              <ul class="links list-unstyled">
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-2">
+            <div class="widget">
+              <h3 class="heading">Resources</h3>
+              <ul class="links list-unstyled">
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <div class="widget">
+              <h3 class="heading">Contact</h3>
+              <ul class="list-unstyled quick-info links">
+                <li class="email"><a href="#">Rome n Revel@gmail.com</a></li>
+                <li class="phone"><a href="#">7025100164</a></li>
+                <li class="address"><a href="#">Sulthan Bathery,Kerala </a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+    <div class="inner dark">
+      <div class="container">
+        <div class="row text-center">
+          <div class="col-md-8 mb-3 mb-md-0 mx-auto">
+					<p>Copyright &copy;<script>document.write(new Date().getFullYear());</script>. All Rights Reserved. &mdash; Roam N' Revel</p>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <!-- Footer -->
+   
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
