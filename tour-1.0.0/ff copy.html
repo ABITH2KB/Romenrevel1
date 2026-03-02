@@ -1,144 +1,593 @@
-<!-- /*
-* Template Name: Tour
-* Template Author: Untree.co
-* Tempalte URI: https://untree.co/
-* License: https://creativecommons.org/licenses/by/3.0/
-*/ -->
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
+
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<meta name="author" content="Untree.co">
-	<link rel="shortcut icon" href="favicon.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wedding Planners - Your Dream Wedding Awaits</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="css/jquery.fancybox.min.css">
+    <link rel="stylesheet" href="fonts/icomoon/style.css">
+    <link rel="stylesheet" href="fonts/flaticon/font/flaticon.css">
+    <link rel="stylesheet" href="css/daterangepicker.css">
+    <link rel="stylesheet" href="css/aos.css">
+    <link rel="stylesheet" href="css/wedding.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-	<meta name="description" content="" />
-	<meta name="keywords" content="bootstrap, bootstrap4" />
+    <style>
+        :root {
+  --primary-color: #bfa37a;   /* champagne beige */
+  --secondary-color: #f6f5f3; /* warm ivory background */
+  --dark-color: #181818;      /* rich black */
+  --light-color: #ffffff;
+}
 
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Source+Serif+Pro:wght@400;700&display=swap" rel="stylesheet">
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: var(--dark-color);
+        }
+        
+        .hero-section {
+            background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('images/service/Weddingimg.jpeg') center/cover;
+            min-height: 70vh;
+            display: flex;
+            align-items: center;
+            color: white;
+            text-align: center;
+        }
+        
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            color: var(--dark-color);
+        }
+        
+        .service-card {
+            border: none;
+            border-radius: 15px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            height: 100%;
+            background: white;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+        
+        .icon-box {
+            width: 70px;
+            height: 70px;
+           background: var(--primary-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            font-size: 2rem;
+            color: white;
+        }
+        
+        .feature-box {
+            padding: 2rem;
+            background: white;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .btn-primary-custom {
+            background: var(--primary-color);
+            border: none;
+            padding: 12px 35px;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+        
+        .btn-primary-custom:hover {
+            background: var(--secondary-color);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        footer {
+            background: var(--dark-color);
+            color: white;
+            padding: 3rem 0 1rem;
+        }
+        
+        footer a {
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        footer a:hover {
+            color: var(--primary-color);
+        }
+        
+        .stock-ticker {
+            background: #f0f0f0;
+            padding: 0.5rem 0;
+            font-size: 0.9rem;
+        }
+        /* ===== NAVBAR DROPDOWN CARD STYLE ===== */
+        
+        .navbar .dropdown-menu {
+            display: block;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(15px);
+            transition: all 0.25s ease;
+            border-radius: 16px;
+            padding: 14px 0;
+            border: none;
+            min-width: 260px;
+            box-shadow: 0 20px 45px rgba(0, 0, 0, 0.18);
+        }
+        /* Hover open */
+        
+        .navbar .dropdown:hover .dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+        /* Dropdown items */
+        
+        .dropdown-menu .dropdown-item {
+            padding: 5px 15px;
+            font-weight: 500;
+        }
+        
+        .dropdown-menu .dropdown-item:hover {
+            background: #f6f6f6;
+            color: #000;
+            border-radius: 8px;
+        }
+        /* Prevent click opening */
+        
+        .dropdown-toggle::after {
+            display: none;
+        }
 
-	<link rel="stylesheet" href="css/bootstrap.min.css">
-	<link rel="stylesheet" href="css/owl.carousel.min.css">
-	<link rel="stylesheet" href="css/owl.theme.default.min.css">
-	<link rel="stylesheet" href="css/jquery.fancybox.min.css">
-	<link rel="stylesheet" href="fonts/icomoon/style.css">
-	<link rel="stylesheet" href="fonts/flaticon/font/flaticon.css">
-	<link rel="stylesheet" href="css/daterangepicker.css">
-	<link rel="stylesheet" href="css/aos.css">
-	<link rel="stylesheet" href="css/style.css">
 
-	<title>Tour Free Bootstrap Template for Travel Agency by Untree.co</title>
+/* ===== HEADER HEIGHT INCREASE ===== */
+/* .navbar {
+  padding-top: 22px;
+  padding-bottom: 22px;
+} */
 
-	<!-- Logo & Nav Fix -->
-	<style>
-		.site-navigation {
-			display: flex !important;
-			align-items: center !important;
-			justify-content: space-between;
-		}
+.navbar .nav-link {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+body, h1, h2, h3, h4, h5, h6 {
+  font-family: 'Lato', sans-serif;
+}
 
-		.site-navigation .logo {
-			display: flex !important;
-			align-items: center !important;
-			padding: 0;
-		}
+section {
+  padding-top: 90px;
+  padding-bottom: 90px;
+}
 
-		.site-navigation .logo img {
-			height: 70px;
-			width: auto;
-			display: block;
-		}
+.section-title {
+  letter-spacing: 1px;
+  font-weight: 600;
+}
 
-		.site-navigation .site-menu {
-			margin-top: 0 !important;
-			display: flex !important;
-			align-items: center !important;
-		}
+p {
+  line-height: 1.8;
+  color: #555;
+}
+.hero-section p {
+  color: #ffffff;
+}
 
-		.site-nav {
-			padding: 10px 0;
-		}
-	</style>
+
+
+.navbar {
+    background: transparent !important;
+    padding-top: 15px !important;
+    padding-bottom: 15px !important;
+    position: absolute !important;
+    width: 100%;
+    z-index: 999;
+    box-shadow: none !important;
+    border-bottom: none !important;
+}
+
+.navbar-light .navbar-nav .nav-link {
+    color: #ffffff !important;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+    padding: 8px 16px !important;
+    transition: color 0.3s;
+}
+
+.navbar-light .navbar-nav .nav-link:hover {
+    color: #d6d4d2 !important;
+}
+
+.navbar-light .navbar-nav .nav-link.active {
+    color: #faf8f5 !important;
+    font-weight: 700;
+}
+
+.navbar-light .navbar-toggler-icon {
+    filter: invert(1);
+}
+.navbar-brand img, .logo img {
+    filter: drop-shadow(0px 0px 6px rgba(138, 137, 137, 0.9));
+}
+
+
+
+    </style>
 </head>
 
 <body>
+    <!-- Navigation -->
+    <div class="site-mobile-menu site-navbar-target">
+        <div class="site-mobile-menu-header">
+            <div class="site-mobile-menu-close">
+                <span class="icofont-close js-menu-toggle"></span>
+            </div>
+        </div>
+        <div class="site-mobile-menu-body"></div>
+    </div>
 
-	<div class="site-mobile-menu site-navbar-target">
-		<div class="site-mobile-menu-header">
-			<div class="site-mobile-menu-close">
-				<span class="icofont-close js-menu-toggle"></span>
-			</div>
-		</div>
-		<div class="site-mobile-menu-body"></div>
-	</div>
+  <nav class="navbar navbar-expand-lg navbar-dark" style="position:absolute; width:100%; z-index:999; background:transparent !important;">
+    <div class="container">
+        
+        <!-- Logo -->
+        <a href="index.html" class="logo m-0" style="display: flex; align-items: center;">
+            <img src="images/service/removed.png" alt="" style="height: 70px; width: auto;">
+        </a>
 
-	<nav class="site-nav">
-		<div class="container">
-			<div class="site-navigation">
+        <!-- Mobile Toggle -->
+        <button class="navbar-toggler border-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileMenu">
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
-				<!-- LOGO -->
-				<a href="index22.html" class="logo m-0" style="display: flex; align-items: center;">
-					<img src="images/service/removed.png" alt="" style="height: 70px; width: auto;">
-				</a>
+        <!-- Desktop Menu -->
+        <div class="collapse navbar-collapse" id="mainNavbar">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link text-white fw-bold" href="index.html">Home</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link text-white fw-bold dropdown-toggle" href="#" data-bs-toggle="dropdown">Services</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="wedding22.html">Wedding Planners</a></li>
+                        <li><a class="dropdown-item" href="tourndtravel.html">Tours and Travels</a></li>
+                        <li><a class="dropdown-item" href="Eventsanddecor.html">Events & Decoration</a></li>
+                        <li><a class="dropdown-item" href="venueandconsultation.html">Venue & Consultation</a></li>
+                        <li><a class="dropdown-item" href="photondvedio.html">Photography & Videography</a></li>
+                        <li><a class="dropdown-item" href="Caravansevice.html">Caravan Services</a></li>
+                        <li><a class="dropdown-item" href="Coorporateevents2.html">Corporate Events</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link text-white fw-bold dropdown-toggle" href="#" data-bs-toggle="dropdown">Travels</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="internatinal.html">International Packages</a></li>
+                        <li><a class="dropdown-item" href="Domesticpacakge.html">Domestic Packages</a></li>
+                        <li><a class="dropdown-item" href="Resortbooking.html">Resort Booking</a></li>
+                        <li><a class="dropdown-item" href="Capeignservice.html">Camping Services</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item"><a class="nav-link text-white fw-bold" href="services.html">Services</a></li>
+                <li class="nav-item"><a class="nav-link text-white fw-bold" href="about.html">About</a></li>
+                <li class="nav-item"><a class="nav-link text-white fw-bold" href="contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
 
-				<ul class="js-clone-nav d-none d-lg-inline-block text-left site-menu float-right">
-					<li class="active"><a href="index22.html">Home</a></li>
-					<li class="has-children">
-						<a href="#">Dropdown</a>
-						<ul class="dropdown">
-							<li><a href="elements.html">Elements</a></li>
-							<li><a href="#">Menu One</a></li>
-							<li class="has-children">
-								<a href="#">Menu Two</a>
-								<ul class="dropdown">
-									<li><a href="#">Sub Menu One</a></li>
-									<li><a href="#">Sub Menu Two</a></li>
-									<li><a href="#">Sub Menu Three</a></li>
-								</ul>
-							</li>
-							<li><a href="#">Menu Three</a></li>
-						</ul>
-					</li>
+<!-- Mobile Offcanvas Menu -->
+<div class="offcanvas offcanvas-end" id="mobileMenu" style="width:280px;">
+    <div class="offcanvas-header">
+        <img src="images/service/removed.png" style="height:50px;">
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+    </div>
+    <div class="offcanvas-body">
+        <ul class="navbar-nav">
+            <li class="nav-item"><a class="nav-link text-dark fw-bold" href="index.html">Home</a></li>
+            <li class="nav-item"><p class="nav-link fw-bold text-dark mb-0">Services</p>
+                <ul class="list-unstyled ps-3">
+                    <li><a class="nav-link text-secondary" href="wedding22.html">Wedding Planners</a></li>
+                    <li><a class="nav-link text-secondary" href="tourndtravel.html">Tours and Travels</a></li>
+                    <li><a class="nav-link text-secondary" href="Eventsanddecor.html">Events & Decoration</a></li>
+                    <li><a class="nav-link text-secondary" href="venueandconsultation.html">Venue & Consultation</a></li>
+                    <li><a class="nav-link text-secondary" href="photondvedio.html">Photography & Videography</a></li>
+                    <li><a class="nav-link text-secondary" href="Caravansevice.html">Caravan Services</a></li>
+                    <li><a class="nav-link text-secondary" href="Coorporateevents2.html">Corporate Events</a></li>
+                </ul>
+            </li>
+            <li class="nav-item"><p class="nav-link fw-bold text-dark mb-0">Travels</p>
+                <ul class="list-unstyled ps-3">
+                    <li><a class="nav-link text-secondary" href="internatinal.html">International Packages</a></li>
+                    <li><a class="nav-link text-secondary" href="Domesticpacakge.html">Domestic Packages</a></li>
+                    <li><a class="nav-link text-secondary" href="Resortbooking.html">Resort Booking</a></li>
+                    <li><a class="nav-link text-secondary" href="Capeignservice.html">Camping Services</a></li>
+                </ul>
+            </li>
+            <li class="nav-item"><a class="nav-link text-dark fw-bold" href="services.html">Services</a></li>
+            <li class="nav-item"><a class="nav-link text-dark fw-bold" href="about.html">About</a></li>
+            <li class="nav-item"><a class="nav-link text-dark fw-bold" href="contact.html">Contact Us</a></li>
+        </ul>
+    </div>
+</div>
+    </nav>
 
-					<li class="has-children">
-						<a href="#">Internatinal</a>
-						<ul class="dropdown">
-							<li><a href="elements.html">Elements</a></li>
-							<li><a href="#">Menu One</a></li>
-							<li><a href="#">Menu One</a></li>
-							<li><a href="#">Menu One</a></li>
-							<li><a href="#">Menu One</a></li>
-							<li><a href="#">Menu One</a></li>
-							<li><a href="#">Menu Three</a></li>
-						</ul>
-					</li>
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <h1 class="display-3 fw-bold text-white mb-4">Your Wedding, Perfected</h1>
+                    <p class="lead mb-4"> We transform your vision into a beautifully curated celebration, handling every detail with care so your day feels effortless, meaningful, and unforgettable.
+</p>
+                    <a href="contact.html" class="btn btn-primary-custom btn-lg"> Plan Your Dream Wedding</a>
+                </div>
+            </div>
+        </div>
+    </section>
 
-					<li><a href="services.html">Services</a></li>
-					<li><a href="about.html">About</a></li>
-					<li><a href="contact.html">Contact Us</a></li>
-				</ul>
+    <!-- Introduction -->
+   
 
-				<a href="#" class="burger ml-auto float-right site-menu-toggle js-menu-toggle d-inline-block d-lg-none light" data-toggle="collapse" data-target="#main-navbar">
-					<span></span>
-				</a>
+    <!-- Initial Planning Section -->
+  <section id="planning" class="py-4">
+    <div class="container">
+        <h2 class="section-title text-center mb-5">Planning With Purpose</h2>
 
-			</div>
-		</div>
-	</nav>
+        <div class="row">
 
-	<div class="hero">
-		<div class="container">
-			<div class="row align-items-center">
-				<div class="col-lg-7">
-					<div class="intro-wrap">
+            <!-- Full-width Centered Text -->
+            <div class="col-12 text-center">
 
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+  <h4 class="mb-3">Every unforgettable celebration begins with thoughtful planning.</h4>
 
+  <p>
+    We start by understanding you  your story, your style, your traditions, and your vision for the day. This foundation allows us to design an experience that feels personal, meaningful, and uniquely yours.
+  </p>
+
+  <p>
+    From budgets and timelines to venues and vendors, every detail is carefully mapped out to ensure clarity and confidence at every step.
+  </p>
+
+  <p class="mb-0">
+    With a clear plan in place, you can relax knowing everything is handled  seamlessly, professionally, and beautifully.
+  </p>
+
+</div>
+
+        </div>
+    </div>
+</section>
+
+    <!-- Wedding Day Logistics -->
+
+
+    <!-- Personalize Section -->
+    <section id="personalize" class="py-5">
+        <div class="container">
+            <h2 class="section-title text-center mb-5">Personalizing Your Wedding Experience</h2>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-3">
+                    <div class="service-card p-4 text-center">
+                        <div class="icon-box">
+                            <i class="fas fa-palette"></i>
+                        </div>
+                        <h5 class="mb-3">Theme & Décor</h5>
+                       <p>
+We design refined themes and décor that reflect your personality and story from floral styling and lighting to every finishing touch that elevates the atmosphere.
+</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="service-card p-4 text-center">
+                        <div class="icon-box">
+                            <i class="fas fa-handshake"></i>
+                        </div>
+                        <h5 class="mb-3">Vendor Management</h5>
+                        <p>
+Our trusted network of caterers, photographers, entertainers, and specialists work together flawlessly, ensuring exceptional quality and zero stress for you.
+</p>
+
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="service-card p-4 text-center">
+                        <div class="icon-box">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <h5 class="mb-3">Event Flow & Scheduling</h5>
+                      <p>
+Every moment is thoughtfully timed and coordinated, creating a smooth flow so your day unfolds naturally and beautifully without interruptions.
+</p>
+
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="service-card p-4 text-center">
+                        <div class="icon-box">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                        <h5 class="mb-3">Cultural Traditions</h5>
+                        <p>
+We honor your traditions with authenticity and respect, thoughtfully incorporating each ritual to create a celebration rich in meaning and heritage.
+</p>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="section-title text-center mb-5">Wedding Planning Services</h2>
+            <p class="text-center lead mb-5">
+Comprehensive planning and styling services designed to bring your dream wedding to life.
+</p>
+
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="service-card p-4 text-center">
+                        <div class="icon-box">
+                            <i class="fas fa-ring"></i>
+                        </div>
+                        <h5 class="mb-3">Full Wedding Planning</h5>
+                        <p>Comprehensive planning and styling services designed to bring your dream wedding to life..</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="service-card p-4 text-center">
+                        <div class="icon-box">
+                            <i class="fas fa-paint-brush"></i>
+                        </div>
+                        <h5 class="mb-3">Décor & Styling</h5>
+                        <p>Elegant styling and creative décor design that reflects your vision.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="service-card p-4 text-center">
+                        <div class="icon-box">
+                            <i class="fas fa-champagne-glasses"></i>
+                        </div>
+                        <h5 class="mb-3">Wedding Day Management</h5>
+                        <p>Flawless execution on your big day, stress-free.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-5">
+        <div class="container">
+            <h2 class="section-title text-center mb-5">Contact Us</h2>
+            <div class="row">
+                <div class="col-lg-6 mx-auto">
+                    <form class="p-4 shadow rounded bg-white">
+                        <div class="mb-3">
+                            <label class="form-label">Full Name</label>
+                            <input type="text" class="form-control" placeholder="Your name">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Email Address</label>
+                            <input type="email" class="form-control" placeholder="your@email.com">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Wedding Date</label>
+                            <input type="date" class="form-control">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Message</label>
+                            <textarea class="form-control" rows="4" placeholder="Tell us about your dream wedding..."></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary-custom w-100">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stock Ticker (Banca Section) -->
+   
+    <!-- Footer -->
+   
+    
+  <div class="site-footer">
+    <div class="inner first">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6 col-lg-4">
+            <div class="widget">
+              <h3 class="heading">About Us</h3>
+              <p> Crafting elegant weddings, memorable events, and seamless experiences.</p>
+            </div>
+            <div class="widget">
+              <ul class="list-unstyled social">
+                <li><a href="#"><span class="icon-twitter"></span></a></li>
+                <li><a href="#"><span class="icon-instagram"></span></a></li>
+                <li><a href="#"><span class="icon-facebook"></span></a></li>
+                <li><a href="#"><span class="icon-linkedin"></span></a></li>
+                <li><a href="#"><span class="icon-dribbble"></span></a></li>
+                <li><a href="#"><span class="icon-pinterest"></span></a></li>
+                <li><a href="#"><span class="icon-apple"></span></a></li>
+                <li><a href="#"><span class="icon-google"></span></a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-2 pl-lg-5">
+            <div class="widget">
+              <h3 class="heading">Pages</h3>
+              <ul class="links list-unstyled">
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-2">
+            <div class="widget">
+              <h3 class="heading">Resources</h3>
+              <ul class="links list-unstyled">
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <div class="widget">
+              <h3 class="heading">Contact</h3>
+              <ul class="list-unstyled quick-info links">
+             <li class="email">
+                
+                <a href="#">roamnrevel.explore@gmail.com</a></li>
+								<li class="phone"><a href="#">+ 91 8891697778</a></li>
+                                <li class="phone"><a href="#">+91 7025100164</a></li>
+
+								<li class="address"><a href="#">Sulthan bathery,Wayanad,Kerela</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+    <div class="inner dark">
+      <div class="container">
+        <div class="row text-center">
+          <div class="col-md-8 mb-3 mb-md-0 mx-auto">
+					<p>Copyright &copy;<script>document.write(new Date().getFullYear());</script>. All Rights Reserved. &mdash; Roam N' Revel</p>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <!-- Footer -->
+   
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>
